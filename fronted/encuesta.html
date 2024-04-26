@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="encuesta.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+           <h1>Encuesta en línea</h1> 
+        </header>
+        
+
+        <!-- Tres controles para las preguntas -->
+        
+        <label for="pregunta1">¿Qué problema resuelve nuestro (producto o servicio) en tu vida diaria?</label>
+        <input type="text" id="pregunta1" name="pregunta1" class="input-textarea" required>
+
+        <label> Considerando una escala del 1 al 5, donde 1 representa insatisfacción y 5 satisfacción completa</label>
+
+        <label for="pregunta2" class="form-label">¿Qué tan satisfecho está con nuestro producto/servicio?</label>
+        <input type="range" class="form-range" min="1" max="5" id="pregunta2" name="pregunta2" required>
+
+        <label for="pregunta3">¿Qué probabilidades hay de que recomiendes nuestra marca a un amigo y/o familiar?</label>
+        <input type="text" id="pregunta3" name="pregunta3" class="input-textarea" required>
+
+        <button type="submit" class="submit-button container">Enviar</button>
+    </div>
+</body>
+</html>
