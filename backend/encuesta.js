@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seleccionar el formulario y el contenedor del grid
     const formulario = document.getElementById('formulario');
     const grid = document.getElementById('grid');
+    const botonEliminarContenido = document.getElementById('eliminarContenido'); // Agregar esta línea
 
     // Obtener registros guardados del Local Storage
     let registros = JSON.parse(localStorage.getItem('registros')) || [];
@@ -21,18 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Respuesta 1: ${registro.pregunta1}</p>
                 <p>Respuesta 2: ${registro.pregunta2}</p>
                 <p>Respuesta 3: ${registro.pregunta3}</p>
-                <button class="eliminar" data-index="${index}">Eliminar</button>
             `;
             grid.appendChild(div);
         });
     };
 
-    // Función para eliminar un registro
-    const eliminarRegistro = (index) => {
-        registros.splice(index, 1);
-        guardarRegistros();
-        renderizarRegistros();
+    // Función para limpiar el contenido del grid
+    const limpiarGrid = () => {
+        grid.innerHTML = '';
     };
+
+    // Evento para el botón de eliminar contenido del grid
+    botonEliminarContenido.addEventListener('click', function() {
+        limpiarGrid();
+    });
 
     // Renderizar los registros al cargar la página
     renderizarRegistros();
@@ -46,6 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const pregunta2 = this.elements['pregunta2'].value.trim();
         const pregunta3 = this.elements['pregunta3'].value.trim();
 
+        // Imprimir los valores en la consola para verificar
+        console.log('Respuesta 1:', pregunta1);
+        console.log('Respuesta 2:', pregunta2);
+        console.log('Respuesta 3:', pregunta3);
+
         // Verificar que se hayan respondido todas las preguntas
         if (pregunta1 !== '' && pregunta2 !== '' && pregunta3 !== '') {
             // Guardar el registro en el Local Storage
@@ -58,13 +66,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor responde todas las preguntas.');
         }
     });
-
-    // Delegación de evento para eliminar registros
-    grid.addEventListener('click', function(event) {
-        if (event.target.classList.contains('eliminar')) {
-            const index = event.target.dataset.index;
-            eliminarRegistro(index);
-        }
-    });
 });
-

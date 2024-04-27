@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="encuesta.css">
 </head>
 <body>
+    <!-- Importación del archivo JavaScript -->
+    <script src="../backend/encuesta.js"></script>
 
     <header class="header">
         <h1>Encuesta en línea</h1> 
@@ -18,8 +20,6 @@
 
             <label for="pregunta1">¿Qué problema resuelve nuestro (producto o servicio) en tu vida diaria?</label>
             <input type="text" id="pregunta1" name="pregunta1" class="input-textarea" required>
-
-            <label><strong>Considerando una escala de insatisfacción o satisfacción completa</strong></label>
 
             <label for="pregunta2">¿Qué tan satisfecho está con nuestro producto/servicio?</label>
             <input type="text" id="pregunta2" name="pregunta2" class="input-textarea" required>
@@ -36,13 +36,11 @@
         <h2>Sección de Visualización</h2>
         <div id="grid">
             <!-- Registro en el grid -->
-            <div class="registro">
-                <p>Respuesta 1: Lorem ipsum dolor sit amet</p>
-                <p>Respuesta 2: consectetur adipiscing elit</p>
-                <p>Respuesta 3: Integer nec odio</p>
-                <button class="eliminar">Eliminar</button>
-            </div>
+    
+
         </div>
+        <!-- Botón para eliminar contenido del grid -->
+        <button id="eliminarContenido" class="submit-button">Eliminar Contenido</button>
     </div>
     
 
