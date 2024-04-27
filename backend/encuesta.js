@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Seleccionar el formulario y el contenedor del grid
     const formulario = document.getElementById('formulario');
     const grid = document.getElementById('grid');
-    const botonEliminarContenido = document.getElementById('eliminarContenido'); // Agregar esta línea
+    const botonEliminarContenido = document.getElementById('eliminarContenido');
 
     // Obtener registros guardados del Local Storage
     let registros = JSON.parse(localStorage.getItem('registros')) || [];
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para renderizar los registros en el grid
     const renderizarRegistros = () => {
         grid.innerHTML = '';
-        registros.forEach((registro, index) => {
+        registros.forEach((registro) => {
             const div = document.createElement('div');
             div.classList.add('registro');
             div.innerHTML = `
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para limpiar el contenido del grid
     const limpiarGrid = () => {
         grid.innerHTML = '';
+        registros = [];
     };
 
     // Evento para el botón de eliminar contenido del grid
@@ -60,8 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             registros.push({ pregunta1, pregunta2, pregunta3 });
             guardarRegistros();
             renderizarRegistros();
-            // Limpiar los campos del formulario
-            this.reset();
+            this.reset(); // Limpiar los campos del formulario
         } else {
             alert('Por favor responde todas las preguntas.');
         }
