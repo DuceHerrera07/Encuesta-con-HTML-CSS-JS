@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="encuesta.css">
+</head>
+<body>
+    <!-- Importación del archivo JavaScript -->
+    <script src="../backend/encuesta.js"></script>
+
+    <header class="header">
+        <h1>Encuesta en línea</h1> 
+     </header>
+
+    <div class="container">
+        <!-- Tres controles para las preguntas -->
+        <form id="formulario" class="formulario">
+
+            <label for="pregunta1">¿Qué problema resuelve nuestro (producto o servicio) en tu vida diaria?</label>
+            <input type="text" id="pregunta1" name="pregunta1" class="input-textarea" required>
+
+            <label for="pregunta2">¿Qué tan satisfecho está con nuestro producto/servicio?</label>
+            <input type="text" id="pregunta2" name="pregunta2" class="input-textarea" required>
+
+            <label for="pregunta3">¿Qué probabilidades hay de que recomiendes nuestra marca a un amigo y/o familiar?</label>
+            <input type="text" id="pregunta3" name="pregunta3" class="input-textarea" required>
+
+            <button type="submit" class="submit-button container">Enviar</button>
+
+        </form> 
+    </div>
+
+    <div class="visualizacion">
+        <h2>Sección de Visualización</h2>
+        <div id="grid">
+
+        </div>
+
+        <button id="eliminarContenido" class="submit-button visualizacion">Eliminar Contenido</button>
+    </div>
+    
+</body>
+</html>

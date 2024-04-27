@@ -1,0 +1,86 @@
+:root {
+    --color-white: #f3f3f3;
+    --color-background-layer-1: #141428;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}
+
+.container, .visualizacion {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 0 0.625rem;
+    margin-bottom: 1.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-textarea {
+    min-height: 5px;
+    width: 85%;
+    padding: 0.65rem;
+    resize: vertical;
+    border-radius: 18px;
+    border: none;
+}
+
+.submit-button {
+    display: block;
+    width: 30%;
+    padding: 0.75rem;
+    color: inherit;
+    border-radius: 18px;
+    cursor: pointer;
+    background: var(--color-background-layer-1);
+    border: none;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--color-background-layer-1);
+    background-image: linear-gradient(115deg, rgba(20, 20, 53, 0.8), rgba(71, 141, 141, 0.413));
+}
+
+h1 {
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+label, .formulario label {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.formulario {
+    display: grid;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.formulario .input-textarea {
+    width: 100%; /* Anchura completa */
+}
+
+.formulario .submit-button {
+    width: 50%;
+    background: #141428; /* Estilo específico para el formulario */
+}
